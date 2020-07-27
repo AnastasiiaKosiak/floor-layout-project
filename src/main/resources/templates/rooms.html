@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available rooms</title>
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+<form action="#" th:action="@{/rooms/all}" th:object="${rooms}" method="get">
+    <table>
+        <tr>
+            <th>Room #</th>
+            <th>Coordinates</th>
+            <th>Draw room</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="room : ${rooms}">
+            <td th:text="${room.id}">ID</td>
+            <td th:text="${room.coordinates}">Coordinates</td>
+            <td> <a th:href="@{'/draw-rooms/' + ${room.id}}">Draw</a> </td>
+            <td> <a th:href="@{'/delete/' + ${room.id}}">Delete</a> </td>
+        </tr>
+    </table>
+    <p> <a href="/draw-rooms">Draw all rooms </a></p>
+    <p> <a href="/">Go back to menu</a> </p>
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coordinates</title>
+    <link rel="stylesheet" href="/css/input.css">
+</head>
+<body>
+<div>
+    <form action="#" th:action="@{/coordinates/add}" th:object="${input}" method="post">
+        <input name="input" type="text"
+               th:field="*{input}" placeholder="Enter room coordinates here">
+        <p> <input type="submit" name="submit"></p>
+    </form>
+</div>
+
+</body>
+</html>
